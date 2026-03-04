@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Key Launcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .prose h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #111827;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .prose p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: #4b5563;
+        }
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+        .toc-link.active {
+            color: #2563eb;
+            font-weight: 600;
+            border-left: 2px solid #2563eb;
+            padding-left: 0.75rem;
+        }
+        .toc-link {
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+        }
+        /* Language toggling logic */
+        [lang-content] { display: none; }
+        body.lang-vi [lang-content="vi"] { display: block; }
+        body.lang-en [lang-content="en"] { display: block; }
+        
+        .lang-switch-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 lang-vi">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo Recreated from ic_launcher.png -->
+                <div class="w-10 h-10 rounded-full overflow-hidden shadow-md flex items-center justify-center bg-[#1a1a14]">
+                    <svg viewBox="0 0 100 100" class="w-full h-full p-2">
+                        <g fill="#fcc203">
+                            <!-- Vertical bar -->
+                            <rect x="42" y="15" width="16" height="70" rx="2" transform="rotate(0 50 50)" />
+                            <!-- 60 degree bar -->
+                            <rect x="42" y="15" width="16" height="70" rx="2" transform="rotate(60 50 50)" />
+                            <!-- 120 degree bar -->
+                            <rect x="42" y="15" width="16" height="70" rx="2" transform="rotate(120 50 50)" />
+                        </g>
+                    </svg>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight">Key Launcher</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="flex bg-gray-100 p-1 rounded-md border">
+                    <button onclick="setLanguage('vi')" id="btn-vi" class="lang-switch-btn px-3 py-1 text-xs font-medium rounded active">VN</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="lang-switch-btn px-3 py-1 text-xs font-medium rounded">EN</button>
+                </div>
+                <div class="hidden md:block text-xs text-gray-500 italic">
+                    <span lang-content="vi">Cập nhật: 04/03/2024</span>
+                    <span lang-content="en">Updated: March 04, 2024</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row gap-12">
+            
+            <!-- Sidebar Navigation (TOC) -->
+            <aside class="md:w-1/4">
+                <div class="sticky top-24">
+                    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                        <span lang-content="vi">Nội dung chính</span>
+                        <span lang-content="en">Table of Contents</span>
+                    </h3>
+                    <nav id="toc-nav" class="space-y-3 flex flex-col text-sm text-gray-600">
+                        <a href="#introduction" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">1. Giới thiệu</span>
+                            <span lang-content="en">1. Introduction</span>
+                        </a>
+                        <a href="#acceptance" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">2. Chấp nhận điều khoản</span>
+                            <span lang-content="en">2. Acceptance of Terms</span>
+                        </a>
+                        <a href="#usage" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">3. Quyền sử dụng</span>
+                            <span lang-content="en">3. License to Use</span>
+                        </a>
+                        <a href="#restrictions" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">4. Các hạn chế</span>
+                            <span lang-content="en">4. Restrictions</span>
+                        </a>
+                        <a href="#intellectual-property" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">5. Sở hữu trí tuệ</span>
+                            <span lang-content="en">5. Intellectual Property</span>
+                        </a>
+                        <a href="#privacy" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">6. Quyền riêng tư</span>
+                            <span lang-content="en">6. Privacy</span>
+                        </a>
+                        <a href="#disclaimer" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">7. Miễn trừ trách nhiệm</span>
+                            <span lang-content="en">7. Disclaimer</span>
+                        </a>
+                        <a href="#termination" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">8. Chấm dứt</span>
+                            <span lang-content="en">8. Termination</span>
+                        </a>
+                        <a href="#contact" class="toc-link hover:text-blue-600">
+                            <span lang-content="vi">9. Liên hệ</span>
+                            <span lang-content="en">9. Contact</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <article class="md:w-3/4 prose max-w-none bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <section id="introduction">
+                    <div lang-content="vi">
+                        <h2>1. Giới thiệu</h2>
+                        <p>Chào mừng bạn đến với Key Launcher. Các Điều khoản sử dụng này ("Điều khoản") chi phối việc bạn truy cập và sử dụng ứng dụng Key Launcher ("Dịch vụ").</p>
+                        <p>Bằng cách cài đặt hoặc sử dụng ứng dụng, bạn đồng ý tuân thủ các điều khoản này. Nếu bạn không đồng ý với bất kỳ phần nào của các điều khoản, vui lòng không sử dụng ứng dụng của chúng tôi.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>1. Introduction</h2>
+                        <p>Welcome to Key Launcher. These Terms of Service ("Terms") govern your access to and use of the Key Launcher application ("Service").</p>
+                        <p>By installing or using the application, you agree to be bound by these terms. If you do not agree with any part of these terms, please do not use our application.</p>
+                    </div>
+                </section>
+
+                <section id="acceptance">
+                    <div lang-content="vi">
+                        <h2>2. Chấp nhận điều khoản</h2>
+                        <p>Dịch vụ này dành cho người dùng từ 13 tuổi trở lên. Bằng việc sử dụng Key Launcher, bạn khẳng định rằng bạn có đủ năng lực pháp lý để ký kết hợp đồng ràng buộc hoặc đã có sự đồng ý của cha mẹ/người giám hộ.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>2. Acceptance of Terms</h2>
+                        <p>This Service is intended for users who are at least 13 years old. By using Key Launcher, you represent that you have the legal capacity to enter into a binding agreement or have received parental/guardian consent.</p>
+                    </div>
+                </section>
+
+                <section id="usage">
+                    <div lang-content="vi">
+                        <h2>3. Quyền sử dụng</h2>
+                        <p>Key Launcher cấp cho bạn một giấy phép cá nhân, có giới hạn, không độc quyền, không thể chuyển nhượng và có thể thu hồi để sử dụng ứng dụng trên các thiết bị thuộc sở hữu của bạn nhằm mục đích cá nhân, phi thương mại.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>3. License to Use</h2>
+                        <p>Key Launcher grants you a personal, limited, non-exclusive, non-transferable, and revocable license to use the application on devices you own for personal, non-commercial purposes.</p>
+                    </div>
+                </section>
+
+                <section id="restrictions">
+                    <div lang-content="vi">
+                        <h2>4. Các hạn chế</h2>
+                        <p>Bạn cam kết không thực hiện các hành vi sau:</p>
+                        <ul>
+                            <li>Sao chép, sửa đổi hoặc tạo ra các sản phẩm phái sinh từ mã nguồn của ứng dụng.</li>
+                            <li>Sử dụng ứng dụng cho bất kỳ mục đích bất hợp pháp nào hoặc vi phạm pháp luật địa phương.</li>
+                            <li>Cố gắng xâm nhập trái phép vào hệ thống, dữ liệu của người dùng khác hoặc máy chủ của chúng tôi.</li>
+                            <li>Phát tán phần mềm độc hại thông qua hoặc liên quan đến ứng dụng.</li>
+                        </ul>
+                    </div>
+                    <div lang-content="en">
+                        <h2>4. Restrictions</h2>
+                        <p>You agree not to engage in any of the following activities:</p>
+                        <ul>
+                            <li>Copy, modify, or create derivative works from the application's source code.</li>
+                            <li>Use the application for any illegal purpose or in violation of local laws.</li>
+                            <li>Attempt to gain unauthorized access to our systems, other users' data, or our servers.</li>
+                            <li>Distribute malware through or in connection with the application.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="intellectual-property">
+                    <div lang-content="vi">
+                        <h2>5. Sở hữu trí tuệ</h2>
+                        <p>Tất cả nội dung, tính năng, logo và chức năng của Key Launcher là tài sản độc quyền của nhà phát triển và được bảo hộ bởi luật bản quyền, thương hiệu và các luật sở hữu trí tuệ khác.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>5. Intellectual Property</h2>
+                        <p>All content, features, logos, and functionality of Key Launcher are the exclusive property of the developer and are protected by copyright, trademark, and other intellectual property laws.</p>
+                    </div>
+                </section>
+
+                <section id="privacy">
+                    <div lang-content="vi">
+                        <h2>6. Quyền riêng tư</h2>
+                        <p>Việc sử dụng Key Launcher cũng được chi phối bởi Chính sách Bảo mật của chúng tôi. Vui lòng xem lại Chính sách Bảo mật để hiểu cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>6. Privacy</h2>
+                        <p>Your use of Key Launcher is also governed by our Privacy Policy. Please review our Privacy Policy to understand how we collect, use, and protect your information.</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mt-4">
+                        <p class="m-0 text-sm text-blue-800" lang-content="vi">
+                            <strong>Lưu ý:</strong> Chúng tôi không thu thập bất kỳ thông tin nhạy cảm nào mà không có sự đồng ý rõ ràng của bạn.
+                        </p>
+                        <p class="m-0 text-sm text-blue-800" lang-content="en">
+                            <strong>Note:</strong> We do not collect any sensitive information without your explicit consent.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="disclaimer">
+                    <div lang-content="vi">
+                        <h2>7. Miễn trừ trách nhiệm</h2>
+                        <p>Dịch vụ được cung cấp trên cơ sở "NGUYÊN TRẠNG" và "SẴN CÓ". Chúng tôi không đảm bảo rằng dịch vụ sẽ không bị gián đoạn, không có lỗi hoặc hoàn toàn bảo mật.</p>
+                        <p>Trong phạm vi tối đa được pháp luật cho phép, Key Launcher sẽ không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp, gián tiếp hoặc ngẫu nhiên nào phát sinh từ việc bạn sử dụng hoặc không thể sử dụng ứng dụng.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>7. Disclaimer of Warranties</h2>
+                        <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We do not guarantee that the service will be uninterrupted, error-free, or completely secure.</p>
+                        <p>To the maximum extent permitted by law, Key Launcher shall not be liable for any direct, indirect, or incidental damages arising from your use or inability to use the application.</p>
+                    </div>
+                </section>
+
+                <section id="termination">
+                    <div lang-content="vi">
+                        <h2>8. Chấm dứt</h2>
+                        <p>Chúng tôi có quyền tạm ngừng hoặc chấm dứt quyền truy cập của bạn vào Dịch vụ ngay lập tức, mà không cần thông báo trước, nếu bạn vi phạm bất kỳ điều khoản nào trong văn bản này.</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>8. Termination</h2>
+                        <p>We reserve the right to suspend or terminate your access to the Service immediately, without prior notice, if you breach any of the terms in this document.</p>
+                    </div>
+                </section>
+
+                <section id="contact">
+                    <div lang-content="vi">
+                        <h2>9. Liên hệ</h2>
+                        <p>Nếu bạn có bất kỳ câu hỏi nào về các Điều khoản này, vui lòng liên hệ với chúng tôi qua email:</p>
+                        <p class="font-medium text-blue-600">support@keylauncher.com</p>
+                    </div>
+                    <div lang-content="en">
+                        <h2>9. Contact Information</h2>
+                        <p>If you have any questions about these Terms, please contact us via email:</p>
+                        <p class="font-medium text-blue-600">support@keylauncher.com</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 border-t py-12 mt-12">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                <span lang-content="vi">&copy; 2024 Đội ngũ Key Launcher. Bảo lưu mọi quyền.</span>
+                <span lang-content="en">&copy; 2024 Key Launcher Team. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switcher function
+        function setLanguage(lang) {
+            document.body.classList.remove('lang-vi', 'lang-en');
+            document.body.classList.add('lang-' + lang);
+            
+            document.querySelectorAll('.lang-switch-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // TOC active state on scroll
+        window.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const link = document.querySelector(`.toc-link[href="#${id}"]`);
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+                        if (link) link.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-20% 0px -70% 0px' });
+
+            document.querySelectorAll('section[id]').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
